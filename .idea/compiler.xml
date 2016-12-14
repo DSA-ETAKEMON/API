@@ -22,8 +22,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="Etakemon-APIVV1" />
         <module name="PokEETAC" />
+      </profile>
+      <profile default="false" name="Annotation profile for Etakemon-APIVV1" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="Etakemon-APIVV1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
