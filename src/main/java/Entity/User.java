@@ -4,6 +4,15 @@ package Entity;
  * Created by hicham.az on 09/12/2016.
  */
 public class User {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    int id;
     int totalPokemons,punctuacionTotal;
     String name;
     String apellidos;
@@ -13,7 +22,7 @@ public class User {
     public User() {
     }
 
-    public User(int totalPokemons, int punctuacionTotal, String name, String apellidos, String nick, String email, String password) {
+    public User(int id,String name,String apellidos, String nick, String email, String password,int totalPokemons, int punctuacionTotal) {
         this.totalPokemons = totalPokemons;
         this.punctuacionTotal = punctuacionTotal;
         this.name = name;
@@ -21,6 +30,7 @@ public class User {
         Nick = nick;
         Email = email;
         Password = password;
+        this.id = id;
     }
 
 
