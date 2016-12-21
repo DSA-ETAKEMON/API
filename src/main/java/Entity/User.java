@@ -3,7 +3,7 @@ package Entity;
 /**
  * Created by hicham.az on 09/12/2016.
  */
-public class User {
+public class User extends DAO.DAO {
     public int getId() {
         return id;
     }
@@ -92,4 +92,11 @@ public class User {
     }
 
     String Password;
+
+    public User getUserByNick(String nick)
+    {
+        User usr = new User();
+        usr = usr.getUserByNick(nick);
+        return usr;
+    }
 }

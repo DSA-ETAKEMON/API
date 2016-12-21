@@ -25,7 +25,7 @@ public class UsuarioDaoimpl implements UsuarioDAO {
             if (user != null)
                 throw new DAOException("usuario ya existe");
             connection = Database.getConnection();
-            stmt = connection.prepareStatement(UserDAOQuery.UUID);
+            stmt =  connection.prepareStatement(UserDAOQuery.UUID);
             ResultSet rs = stmt.executeQuery();
             if (rs.next())
                 id = rs.getString(1);
@@ -35,10 +35,10 @@ public class UsuarioDaoimpl implements UsuarioDAO {
             stmt.close();
             stmt = connection.prepareStatement(UserDAOQuery.CREATE_USER);
             stmt.setString(1, id);
-            stmt.setString(2, loginid);
+            stmt.setString(2, nick);
             stmt.setString(3, password);
             stmt.setString(4, email);
-            stmt.setString(5, fullname);
+            stmt.setString(5, name + apellidos);
             stmt.executeUpdate();
             stmt.close();
             stmt = connection.prepareStatement(UserDAOQuery.ASSIGN_ROLE_REGISTERED);

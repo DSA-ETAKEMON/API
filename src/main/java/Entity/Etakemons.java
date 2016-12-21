@@ -1,21 +1,39 @@
 package Entity;
 
+import DAO.DAO;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by hicham.az on 09/12/2016.
  */
-public class Etakemons {
+public class Etakemons extends DAO {
 
     int id;
+
+
+
+    int idUser;
     String Tipo,Nombre,Puntos;
 
 
-    public Etakemons(int id, String tipo, String nombre, String puntos) {
+    public Etakemons(int id,int idUser, String tipo, String nombre, String puntos) {
         this.id = id;
         Tipo = tipo;
         Nombre = nombre;
         Puntos = puntos;
+        this.idUser =idUser;
     }
 
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
     public int getId() {
         return id;
     }
@@ -50,5 +68,18 @@ public class Etakemons {
 
     public Etakemons (){}
 
+    public List<Etakemons> getEtakemons(String nick)
+    {
+        List<Etakemons> miLista = new ArrayList<Etakemons>();
+        Etakemons etk = new Etakemons();
+        miLista = etk.selectEtakemonByidUser(nick);
+        return miLista;
+    }
+
+    public Etakemons getEtakemon(int id)
+    {
+        Etakemons etk  = new Etakemons();
+        return etk.selectUnEtakemon(id);
+    }
 
 }
