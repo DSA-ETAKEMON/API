@@ -4,52 +4,59 @@ package Entity;
  * Created by hicham.az on 09/12/2016.
  */
 public class User extends DAO.DAO {
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    int id;
-    int totalPokemons,punctuacionTotal;
+    int totalEtakemons, puntuacionTotal;
     String name;
-    String apellidos;
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public int getTotalEtakemons() {
+        return totalEtakemons;
+    }
+
+    public void setTotalEtakemons(int totalEtakemons) {
+        this.totalEtakemons = totalEtakemons;
+    }
+
+    public int getPuntuacionTotal() {
+        return puntuacionTotal;
+    }
+
+    public void setPuntuacionTotal(int puntuacionTotal) {
+        this.puntuacionTotal = puntuacionTotal;
+    }
+
+    String surname;
     String Nick;
     String Email;
+    String Password;
 
     public User() {
     }
 
-    public User(int id,String name,String apellidos, String nick, String email, String password,int totalPokemons, int punctuacionTotal) {
-        this.totalPokemons = totalPokemons;
-        this.punctuacionTotal = punctuacionTotal;
+    public User(String name,String apellidos, String nick, String email, String password,int totalPokemons, int punctuacionTotal) {
+        this.totalEtakemons = totalPokemons;
+        this.puntuacionTotal = punctuacionTotal;
         this.name = name;
-        this.apellidos = apellidos;
+        this.surname = apellidos;
         Nick = nick;
         Email = email;
         Password = password;
-        this.id = id;
+
     }
 
 
 
-    public int getTotalPokemons() {
-        return totalPokemons;
-    }
 
-    public void setTotalPokemons(int totalPokemons) {
-        this.totalPokemons = totalPokemons;
-    }
 
-    public int getPunctuacionTotal() {
-        return punctuacionTotal;
-    }
 
-    public void setPunctuacionTotal(int punctuacionTotal) {
-        this.punctuacionTotal = punctuacionTotal;
-    }
 
     public String getName() {
         return name;
@@ -59,13 +66,7 @@ public class User extends DAO.DAO {
         this.name = name;
     }
 
-    public String getApellidos() {
-        return apellidos;
-    }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
 
     public String getNick() {
         return Nick;
@@ -91,12 +92,12 @@ public class User extends DAO.DAO {
         Password = password;
     }
 
-    String Password;
+
 
     public User getUserByNick(String nick)
     {
         User usr = new User();
-        usr = usr.getUserByNick(nick);
+        usr = usr.selectByNick(nick);
         return usr;
     }
 }

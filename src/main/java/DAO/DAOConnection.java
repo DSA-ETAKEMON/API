@@ -15,10 +15,10 @@ public class DAOConnection {
     public Connection getConnection() {
         Connection con = null;
         String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-        String DB_URL = "jdbc:mysql://localhost:3306/Empresa";
+        String DB_URL = "jdbc:mysql://192.168.1.173:3306/projectedb";
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "erinHo10");
+        properties.setProperty("password", "12345678");
         properties.setProperty("useSSL", "false");
         properties.setProperty("serverTimezone", "UTC");
         try{
@@ -54,7 +54,7 @@ public class DAOConnection {
     public String getSelectQueryByNick() {
         StringBuilder query = new StringBuilder("SELECT * FROM ");
         query.append(this.getClass().getSimpleName());
-        query.append(" WHERE NICK=?");
+        query.append(" WHERE nick=");
         return query.toString();
     }
 

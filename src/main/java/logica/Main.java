@@ -1,5 +1,6 @@
 package logica;
 
+import Entity.User;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -35,6 +36,32 @@ public class Main {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
+      /*  double[] a = new double[2];
+        a[0] = 100;
+        a[1] = 200;
+        double ab = 3600;
+        double dis = Gestion.MediaKm(a,ab);*/
+
+       User usr = new User();
+       /*  usr.setName("hicham");
+        usr.setSurname("azouagh");
+        usr.setNick("mipingaa");
+        usr.setEmail("mipinga@a.com");
+        usr.setPassword("123456");
+        usr.setPuntuacionTotal(10);
+        usr.setTotalEtakemons(100);
+        usr.insert(); */
+
+        /*String res="";
+        Login lg = new Login();
+        try {
+        res = lg.login("mipingaa","123456");
+    }catch (NullPointerException e)
+        {
+        System.out.println(e.toString());
+         }
+        System.out.print("usuarrio name es :" + usr.getEmail() );
+*/
         final HttpServer server = startServer();
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));

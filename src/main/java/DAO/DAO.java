@@ -110,23 +110,25 @@ public class DAO extends DAOConnection{
 
     public User selectByNick(String nick) {
         String query = getSelectQueryByNick();
+        query += "'" +nick+"'";
         System.out.println(query);
-        User user = new User();;
+        User user = new User();
         Connection con = getConnection();
         try {
             PreparedStatement preparedStatement = con.prepareStatement(query);
             int position = 1;
-           // addPrimaryKeyParameter(preparedStatement, position, primaryKey);
+            int primaryKey  = getPrimaryKeyParameter();
+          //  addPrimaryKeyParameter(preparedStatement, position, primaryKey);
             ResultSet rs = preparedStatement.executeQuery();
             ResultSetMetaData resultSetMetaData = rs.getMetaData();
             while (rs.next()) {
-                if (rs.next()) {
 
-                    user.setId(rs.getInt("id"));
-                    user.setNick(rs.getString("nick"));
-                    user.setEmail(rs.getString("email"));
                     user.setName(rs.getString("name"));
-                }
+                    user.setNick(rs.getString("nick"));
+                    user.setSurname(rs.getString("surname"));
+                    user.setPassword(rs.getString("password"));
+                    user.setEmail(rs.getString("email"));
+
                // setFieldsFromResultSet(resultSet, resultSetMetaData, this);
             }
             preparedStatement.close();
