@@ -11,29 +11,18 @@ import java.util.List;
 public class Etakemons extends DAO {
 
     int id;
+int Puntos;
+    String Tipo,Nombre;
 
-
-
-    int idUser;
-    String Tipo,Nombre,Puntos;
-
-
-    public Etakemons(int id,int idUser, String tipo, String nombre, String puntos) {
+/*
+    public Etakemons(int id, String tipo, String nombre, String puntos) {
         this.id = id;
         Tipo = tipo;
         Nombre = nombre;
         Puntos = puntos;
-        this.idUser =idUser;
     }
+*/
 
-
-    public int getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
     public int getId() {
         return id;
     }
@@ -58,11 +47,11 @@ public class Etakemons extends DAO {
         Nombre = nombre;
     }
 
-    public String getPuntos() {
+    public int getPuntos() {
         return Puntos;
     }
 
-    public void setPuntos(String puntos) {
+    public void setPuntos(int puntos) {
         Puntos = puntos;
     }
 

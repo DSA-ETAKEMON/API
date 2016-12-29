@@ -1,4 +1,5 @@
 package DAO;
+import Exception.*;
 import Entity.Etakemons;
 import Entity.User;
 
@@ -61,9 +62,8 @@ public class DAO extends DAOConnection{
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
             while (resultSet.next()) {
                 etk.setId(resultSet.getInt("id"));
-                etk.setIdUser(resultSet.getInt("idUser"));
                 etk.setTipo(resultSet.getString("tipo"));
-                etk.setPuntos(resultSet.getString("puntos"));
+                etk.setPuntos(resultSet.getInt("puntos"));
                 // setFieldsFromResultSet(resultSet, resultSetMetaData, this);
             }
             preparedStatement.close();
@@ -89,12 +89,10 @@ public class DAO extends DAOConnection{
             ResultSet rs = preparedStatement.executeQuery();
             ResultSetMetaData resultSetMetaData = rs.getMetaData();
             while (rs.next()) {
-
-
                     etk.setId(rs.getInt("id"));
-                    etk.setIdUser(rs.getInt("idUser"));
                     etk.setTipo(rs.getString("tipo"));
-                    etk.setPuntos(rs.getString("puntos"));
+                    etk.setNombre(rs.getString("name"));
+                    etk.setPuntos(rs.getInt("puntos"));
                     miLista.add(etk);
 
                 // setFieldsFromResultSet(resultSet, resultSetMetaData, this);
@@ -123,12 +121,15 @@ public class DAO extends DAOConnection{
             ResultSetMetaData resultSetMetaData = rs.getMetaData();
             while (rs.next()) {
 
+                try {
                     user.setName(rs.getString("name"));
                     user.setNick(rs.getString("nick"));
                     user.setSurname(rs.getString("surname"));
                     user.setPassword(rs.getString("password"));
                     user.setEmail(rs.getString("email"));
-
+                } catch (FormatException e) {
+                    System.out.print(e.toString());
+                }
                // setFieldsFromResultSet(resultSet, resultSetMetaData, this);
             }
             preparedStatement.close();
