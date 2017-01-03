@@ -4,7 +4,7 @@ import Entity.User;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-
+import Exception.*;
 import java.io.IOException;
 import java.net.URI;
 
@@ -14,7 +14,7 @@ import java.net.URI;
  */
 public class Main {
     // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://localhost:9091/etakemon";
+    public static final String BASE_URI = "http://192.168.1.46:9090/etakemon";
 
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
@@ -35,7 +35,7 @@ public class Main {
      * @param args
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, FormatException {
       /*  double[] a = new double[2];
         a[0] = 100;
         a[1] = 200;
@@ -43,20 +43,21 @@ public class Main {
         double dis = Gestion.MediaKm(a,ab);*/
 
        User usr = new User();
-       /*  usr.setName("hicham");
-        usr.setSurname("azouagh");
-        usr.setNick("mipingaa");
-        usr.setEmail("mipinga@a.com");
-        usr.setPassword("123456");
-        usr.setPuntuacionTotal(10);
-        usr.setTotalEtakemons(100);
-        usr.insert(); */
+        //usr.setName("hicham");
+        //usr.setSurname("azouagh");
+        usr.setNick("Jona");
+        //usr.setEmail("mipinga@a.com");
+        usr.setPassword("admin");
+        //usr.setPuntuacionTotal(10);
+        //usr.setTotalEtakemons(100);
+        //usr.insert();
 
-        /*String res="";
+     /*   String res="";
         Login lg = new Login();
         try {
-        res = lg.login("mipingaa","123456");
-    }catch (NullPointerException e)
+            usr = lg.login(usr);
+            res = "ok";
+        }catch (NullPointerException e)
         {
         System.out.println(e.toString());
          }
