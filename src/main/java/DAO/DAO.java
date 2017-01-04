@@ -127,6 +127,8 @@ public class DAO extends DAOConnection{
                     user.setSurname(rs.getString("surname"));
                     user.setPassword(rs.getString("password"));
                     user.setEmail(rs.getString("email"));
+                    user.setPuntuacionTotal(rs.getInt("puntuacionTotal"));
+                    user.setTotalEtakemons(rs.getInt("totalEtakemons"));
                 } catch (FormatException e) {
                     System.out.print(e.toString());
                 }

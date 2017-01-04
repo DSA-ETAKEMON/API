@@ -1,8 +1,6 @@
 package Entity;
 import Exception.*;
 
-import java.text.Format;
-
 /**
  * Created by hicham.az on 09/12/2016.
  */
@@ -38,11 +36,10 @@ public class User extends DAO.DAO {
     public void setPuntuacionTotal(int puntuacionTotal) {
         this.puntuacionTotal = puntuacionTotal;
     }
-
     String surname;
-    String Nick;
-    String Email;
-    String Password;
+    String nick;
+    String email;
+    String password;
 
     public User() {
     }
@@ -52,9 +49,9 @@ public class User extends DAO.DAO {
         this.puntuacionTotal = punctuacionTotal;
         this.name = name;
         this.surname = apellidos;
-        Nick = nick;
-        Email = email;
-        Password = password;
+        nick = nick;
+        email = email;
+        password = password;
     }
 */
     public String getName() {
@@ -72,33 +69,34 @@ public class User extends DAO.DAO {
 
 
     public String getNick() {
-        return Nick;
+        return nick;
     }
 
     public void setNick(String nick) throws FormatException {
         if(nick!=null)
-        Nick = nick;
+        this.nick = nick;
         else
             throw new FormatException("El nick no debe ser nulo");
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) throws FormatException {
         if(email!=null)
-        Email = email;
+        this.email = email;
         else throw new FormatException("El email no debe ser nulo");
     }
 
+   // public int getId(){return this.id;}
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) throws FormatException {
         if(password!=null)
-        Password = password;
+        this.password = password;
         else throw new FormatException("la contraseña no debe ser nulo");
     }
 

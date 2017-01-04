@@ -15,10 +15,14 @@ public class DAOConnection {
     public Connection getConnection() {
         Connection con = null;
         String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+<<<<<<< HEAD
         String DB_URL = "jdbc:mysql://192.168.1.133:3306/projectedb";
+=======
+        String DB_URL = "jdbc:mysql://localhost:3306/projectedb";
+>>>>>>> 3a4f91d12f7d21d02b88a560a7495a5d3b78032e
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "12345678");
+        properties.setProperty("password", "sangre10");
         properties.setProperty("useSSL", "false");
         properties.setProperty("serverTimezone", "UTC");
         try{
