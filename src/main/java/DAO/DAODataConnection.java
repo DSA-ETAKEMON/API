@@ -40,7 +40,6 @@ public class DAODataConnection {
         if (conn != null) {
         } else {
             System.out.println("conexion erronea");
-
         }
         return conn;
 

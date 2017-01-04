@@ -57,18 +57,16 @@ public class Login {
 
         String res ="";
 
-        try {
+
             us = us.getUserByNick(nick);
-            if(us!=null)
+            if(us.getNick()!=null)
             UserExists =true;
-        }catch (Exception e)
-        {
-            System.out.print(e.toString());
-            res = e.toString();
-        }
+
 
         if(!UserExists) {
             try {
+                us.setPuntuacionTotal(10);
+                us.setTotalEtakemons(1);
                 us.setPassword(password);
                 us.setEmail(email);
                 us.setSurname(surname);

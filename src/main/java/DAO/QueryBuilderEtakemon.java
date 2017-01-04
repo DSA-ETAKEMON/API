@@ -22,7 +22,7 @@ public class QueryBuilderEtakemon {
         if ((res != null)  && res.next())
         {
             miEta.setNombre(res.getString("nombre"));
-            miEta.setPuntos(res.getString("puntos"));
+            miEta.setPuntos(res.getInt("puntos"));
             miEta.setTipo(res.getString("tipo"));
         }
         return miEta;

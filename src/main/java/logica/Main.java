@@ -4,7 +4,7 @@ import Entity.User;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-
+import Exception.*;
 import java.io.IOException;
 import java.net.URI;
 
@@ -62,6 +62,28 @@ public class Main {
          }
         System.out.print("usuarrio name es :" + usr.getEmail() );
 */
+        User a = new User();
+        try {
+            a.setEmail("asd");
+            a.setName("heelo");
+            a.setNick("NICK");
+            a.setPassword("123");
+            a.setPuntuacionTotal(10);
+            a.setTotalEtakemons(1);
+        } catch (FormatException e )
+        {
+            System.out.print("-----------" + e.toString());
+        }
+
+      //  Login lg = new Login();
+
+       //    String res  = lg.register("mipingaa","123456","qwe","qwe","qwe");
+       // System.out.print("-----------" + res);
+
+        //  a = a.selectByNick(a.getNick());
+      //  if(a!=null)
+      //  a.insert();
+
         final HttpServer server = startServer();
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));

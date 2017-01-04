@@ -15,7 +15,7 @@ public class DAOConnection {
     public Connection getConnection() {
         Connection con = null;
         String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-        String DB_URL = "jdbc:mysql://192.168.1.173:3306/projectedb";
+        String DB_URL = "jdbc:mysql://192.168.1.133:3306/projectedb";
         Properties properties = new Properties();
         properties.setProperty("user", "root");
         properties.setProperty("password", "12345678");

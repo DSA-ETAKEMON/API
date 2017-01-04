@@ -41,7 +41,6 @@ public class MyResource {
             throw new BadRequestException("all parameters are mandatory");
        User us = new User();
         boolean isOK=false;
-
         String res ="";
      try {
       us = us.getUserByNick(nick);
